@@ -5,7 +5,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>jolie</groupId>
+  <groupId>org.jolie-lang</groupId>
   <artifactId>jolie2java-maven-plugin</artifactId>
   <version>1.0.0</version>
   <packaging>maven-plugin</packaging>
@@ -24,23 +24,24 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <maven.version>3.3.9</maven.version>
+	<jolie.version>1.9.0-git</jolie.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>jolie</groupId>
+      <groupId>org.jolie-lang</groupId>
       <artifactId>jolie2java</artifactId>
-      <version>1.8.1</version>
+      <version>${jolie.version}</version>
     </dependency>
     <dependency>
-      <groupId>jolie</groupId>
+      <groupId>org.jolie-lang</groupId>
       <artifactId>libjolie</artifactId>
-      <version>1.8.1</version>
+      <version>${jolie.version}</version>
     </dependency>
     <dependency>
-      <groupId>jolie</groupId>
+      <groupId>org.jolie-lang</groupId>
       <artifactId>jolie</artifactId>
-      <version>1.8.1</version>
+      <version>${jolie.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.maven</groupId>
