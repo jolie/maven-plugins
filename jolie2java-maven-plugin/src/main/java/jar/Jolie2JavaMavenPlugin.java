@@ -39,6 +39,8 @@ public class Jolie2JavaMavenPlugin
     private String packageName;
     @Parameter( defaultValue = "", property = "TargetPort", required = false )
     private String targetPort;
+    @Parameter( defaultValue = "/usr/lib/jolie/include", property = "includePath", required = false )
+    private String includePath;
 
     public void execute()
         throws MojoExecutionException {
@@ -47,8 +49,9 @@ public class Jolie2JavaMavenPlugin
                 throw new MojoExecutionException( "File not found in " + joliePath );
             }
             System.out.println("Looking for file " + joliePath.getAbsolutePath() );
-            String[] args = {joliePath.getAbsolutePath()};
+            String[] args = {  "-i", includePath, joliePath.getAbsolutePath() };
             Jolie2JavaCommandLineParser cmdParser = Jolie2JavaCommandLineParser.create(args, Jolie2Java.class.getClassLoader());
+
             Program program = ParsingUtils.parseProgram(
                     cmdParser.programStream(),
                     cmdParser.programFilepath().toURI(),
